@@ -4,3 +4,4 @@ Date : 01/08/2026
 
 
 Alert History
+- Filter alerts by date
