@@ -1,0 +1,175 @@
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                ❄️
+            </div>
+
+            <h2>HVAC AI</h2>
+
+        </div>
+
+        <div class="menu-items">
+
+            <div class="menu-item active">
+
+                Dashboard
+
+            </div>
+
+            <div class="menu-item">
+
+                Devices
+
+            </div>
+
+            <div class="menu-item">
+
+                Anomalies
+
+            </div>
+
+            <div class="menu-item">
+
+                Reports
+
+            </div>
+
+            <div class="menu-item">
+
+                Settings
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>HVAC Monitoring Dashboard</h1>
+
+                <p class="topbar-subtitle">
+                    Real-time device monitoring & anomaly tracking
+                </p>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                (click)="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card blue">
+
+                <h3>Total Devices</h3>
+
+                <h2>{{ devices.length }}</h2>
+
+            </div>
+
+            <div class="stat-card red">
+
+                <h3>Active Anomalies</h3>
+
+                <h2>12</h2>
+
+            </div>
+
+            <div class="stat-card purple">
+
+                <h3>Critical Alerts</h3>
+
+                <h2>4</h2>
+
+            </div>
+
+            <div class="stat-card green">
+
+                <h3>Healthy Devices</h3>
+
+                <h2>24</h2>
+
+            </div>
+
+        </div>
+
+        <!-- DEVICE SECTION -->
+
+        <div class="device-section">
+
+            <div class="section-header">
+
+                <h2>HVAC Devices</h2>
+
+            </div>
+
+            <div class="device-grid">
+
+                <div
+                    class="device-card"
+                    *ngFor="let device of devices"
+                    (click)="openDevice(device.device_id)">
+
+                    <div class="device-header">
+
+                        <h3>{{ device.device_name }}</h3>
+
+                        <span class="status-badge">
+
+                            {{ device.status }}
+
+                        </span>
+
+                    </div>
+
+                    <div class="device-body">
+
+                        <p>
+                            <strong>Type:</strong>
+                            {{ device.device_type }}
+                        </p>
+
+                        <p>
+                            <strong>Manufacturer:</strong>
+                            {{ device.manufacturer }}
+                        </p>
+
+                        <p>
+                            <strong>Location:</strong>
+                            {{ device.location }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

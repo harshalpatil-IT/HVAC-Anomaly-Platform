@@ -1,0 +1,216 @@
+<div class="details-page" *ngIf="device">
+
+    <!-- HEADER -->
+<div class="top-actions">
+
+    <button
+        class="back-btn"
+        (click)="goBack()">
+
+        ← Back
+
+    </button>
+
+    <button
+        class="logout-btn"
+        (click)="logout()">
+
+        Logout
+
+    </button>
+
+</div>
+    <div class="device-header-card">
+
+        <div>
+
+            <h1>{{ device.device_name }}</h1>
+
+            <p class="device-subtitle">
+
+                {{ device.device_type }}
+                •
+                {{ device.manufacturer }}
+
+            </p>
+
+        </div>
+
+        <div class="status-section">
+
+            <span class="status-badge">
+
+                {{ device.status }}
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card blue">
+
+            <h3>Total Anomalies</h3>
+
+            <h2>{{ anomalies.length }}</h2>
+
+        </div>
+
+        <div class="stat-card red">
+
+            <h3>Critical Alerts</h3>
+
+            <h2>2</h2>
+
+        </div>
+
+        <div class="stat-card purple">
+
+            <h3>Actions Taken</h3>
+
+            <h2>{{ actions.length }}</h2>
+
+        </div>
+
+        <div class="stat-card green">
+
+            <h3>Health Score</h3>
+
+            <h2>92%</h2>
+
+        </div>
+
+    </div>
+
+    <!-- DEVICE INFO -->
+
+    <div class="info-section">
+
+        <h2>Device Information</h2>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <p><strong>Location:</strong></p>
+
+                <span>{{ device.location }}</span>
+
+            </div>
+
+            <div class="info-card">
+
+                <p><strong>Model Number:</strong></p>
+
+                <span>{{ device.model_number }}</span>
+
+            </div>
+
+            <div class="info-card">
+
+                <p><strong>Status:</strong></p>
+
+                <span>{{ device.status }}</span>
+
+            </div>
+
+            <div class="info-card">
+
+                <p><strong>Manufacturer:</strong></p>
+
+                <span>{{ device.manufacturer }}</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTENT GRID -->
+
+    <div class="content-grid">
+
+        <!-- ANOMALIES -->
+
+        <div class="content-card">
+
+            <h2>Anomalies</h2>
+
+            <div
+                class="anomaly-card"
+                *ngFor="let anomaly of anomalies">
+
+                <div class="anomaly-top">
+
+                    <h3>{{ anomaly.anomaly_name }}</h3>
+
+                    <span
+                        class="severity-badge"
+                        [ngClass]="{
+                            'high': anomaly.severity === 'HIGH',
+                            'medium': anomaly.severity === 'MEDIUM',
+                            'low': anomaly.severity === 'LOW'
+                        }">
+
+                        {{ anomaly.severity }}
+
+                    </span>
+
+                </div>
+
+                <p>
+
+                    <strong>Status:</strong>
+                    {{ anomaly.anomaly_status }}
+
+                </p>
+
+                <p>
+
+                    <strong>Remarks:</strong>
+                    {{ anomaly.remarks }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ACTIONS -->
+
+        <div class="content-card">
+
+            <h2>Actions Taken</h2>
+
+            <div
+                class="action-card"
+                *ngFor="let action of actions">
+
+                <div class="timeline-dot"></div>
+
+                <div class="action-content">
+
+                    <h3>{{ action.action_taken }}</h3>
+
+                    <p>{{ action.action_description }}</p>
+
+                    <span>
+
+                        By:
+                        {{ action.performed_by }}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

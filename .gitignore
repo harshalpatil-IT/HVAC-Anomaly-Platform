@@ -1,0 +1,42 @@
+# ===========================
+# Node.js Backend
+# ===========================
+backend/node_modules/
+backend/.env
+
+# ===========================
+# Angular Frontend
+# ===========================
+frontend/node_modules/
+frontend/.angular/
+frontend/dist/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# ===========================
+# IDE Files
+# ===========================
+.vscode/
+.idea/
+
+# ===========================
+# Operating System Files
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Coverage
+# ===========================
+coverage/
+
+# ===========================
+# Temporary Files
+# ===========================
+tmp/
+temp/
