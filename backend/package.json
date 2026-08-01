@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
+"scripts": {
   "start": "node app.js",
-  "dev": "nodemon app.js"
+  "dev": "nodemon app.js",
+  "check": "node --check app.js"
 },
   "keywords": [],
   "author": "",
